@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximun-scale=1, user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="robots" content="ALL">
+<link rel="shortcut icon" href="https://www.vivatv.com.tw/common/images/favicons/favicon.ico">
+<title>線上客服系統</title>
+<link rel="stylesheet" href="common/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="common/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="common/css/main.css">
+</head>
+<body>
+
+
+
+<div class="grid-layout">
+  <div class="section-side-bar">
+    <div class="viva-logo-white mx-auto"><a href="#"><img src="common/images/viva-logo-white.png" class="img-fluid"></a></div>
+    <div class="d-grid">
+      <div><a href="Dashboard.html"><i class="bi bi-speedometer me-2"></i>總覽</a></div>
+      <div class="new-msg-alert"><a class="active" href="#"><i class="bi bi-chat-dots-fill me-2"></i>對話</a></div>
+      <div><a href="Report.html"><i class="bi bi-file-earmark-bar-graph-fill me-2"></i>報表</a></div>
+      <div><a href="Setting.html"><i class="bi bi-gear-fill me-2"></i>設定</a></div>
+      <div class="new-msg-alert"><a href="Order.html"><i class="bi bi-cart me-2"></i>訂單</a></div>
+    </div>
+  </div>
+  <div class="section-top-bar border-bottom">
+    <div class="d-flex justify-content-between h-100 px-3">
+      <div class="d-flex gap-3">
+        <div class="clr-primary-blue fs-4 fw-bold align-self-center">線上客服系統</div>
+        <div class="clr-tertiary-blue fs-5 align-self-center ff-oswald">Customer Support System</div>  
+      </div>
+      
+      <div class="d-flex gap-3">
+        <div class="d-flex align-items-center flex-shrink-0 clr-primary-blue">
+          <div id="currentTime" class="ff-oswald fs-5 pe-3"></div>
+        </div>
+        <div class="input-group px-3 border-start border-end">
+          <label class="input-group-text pe-0" for="agentStatus">狀態：</label>
+          <select class="form-select ps-0 pe-5" id="agentStatus">
+            <option selected value="0">上線</option>
+            <option value="1">忙碌</option>
+            <option value="2">離線</option>
+          </select>
+        </div>
+
+        <div class="dropdown align-self-center px-3">
+          <button class="btn border-0 fs-5 clr-primary-blue fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle me-2"></i><span>甄美好</span><span class="fs-6 fw-normal ms-1">(南港張曼玉)</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item fs-5" href="#"><i class="bi bi-key-fill me-2"></i>修改密碼</a></li>
+            <li><a class="dropdown-item fs-5" href="Login.html"><i class="bi bi-box-arrow-left me-2"></i>登出</a></li>
+          </ul>
+        </div>
+      </div>
+      
+
+      
+    </div>
+  </div>
+
+  <div class="section-chat-list p-3 pt-0">
+    <div class="h-5 d-flex align-items-center fs-5 clr-primary-blue fw-bold"><span>排隊人數：</span><span class="ff-oswald">5</span></div>
+    <div class="h-95 rounded-4">
+      <div class="d-flex flex-column h-100">
+
+        <div class="chat-list-header">
+          <div class="nav nav-tabs nav-justified w-100" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="case-received-tab" data-bs-toggle="tab" data-bs-target="#caseReceived" type="button" role="tab">服務接收(<span class="ff-oswald mx-1">5</span>)</button>
+            <button class="nav-link" id="case-closed-tab" data-bs-toggle="tab" data-bs-target="#caseClosed" type="button" role="tab">服務結束(<span class="ff-oswald mx-1">3</span>)</button>
+          </div>
+        </div>
+
+        <div class="chat-list-body bg-white rounded-bottom-4 border border-top-0">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane show active" id="caseReceived" role="tabpanel" tabindex="0">
+
+              <div class="chat-item diamond active p-1 p-xl-2 p-xxl-3">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="customer-name">陳約翰</span>
+                    <span class="customer-sex">先生</span>
+                    <span class="customer-level">鑽石會員</span>
+                  </div>
+                  <div class="chat-last-msg-time" title="最後訊息時間">
+                    <span class="ff-oswald">10:05</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="chat-summary">最後一則訊息的內容摘要，最後一則訊息的內容摘要，最後一則訊息的內容摘要</div>
+                </div>
+              </div>
+
+              <div class="chat-item platinum p-1 p-xl-2 p-xxl-3 new-msg-alert">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="customer-name">吳雪莉</span>
+                    <span class="customer-sex">小姐</span>
+                    <span class="customer-level">白金會員</span>
+                  </div>
+                  <div class="chat-last-msg-time" title="最後訊息時間">
+                    <span class="ff-oswald">10:05</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="chat-summary">最後一則訊息的內容摘要，最後一則訊息的內容摘要，最後一則訊息的內容摘要</div>
+                </div>
+              </div>
+
+              <div class="chat-item gold p-1 p-xl-2 p-xxl-3 new-msg-alert">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="customer-name">林溫蒂</span>
+                    <span class="customer-sex">小姐</span>
+                    <span class="customer-level">黃金會員</span>
+                  </div>
+                  <div class="chat-last-msg-time" title="最後訊息時間">
+                    <span class="ff-oswald">10:05</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="chat-summary">最後一則訊息的內容摘要，最後一則訊息的內容摘要，最後一則訊息的內容摘要</div>
+                </div>
+              </div>
+
+              <div class="chat-item silver p-1 p-xl-2 p-xxl-3">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="customer-name">蘇菲亞</span>
+                    <span class="customer-sex">小姐</span>
+                    <span class="customer-level">銀卡會員</span>
+                  </div>
+                  <div class="chat-last-msg-time" title="最後訊息時間">
+                    <span class="ff-oswald">10:05</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="chat-summary">最後一則訊息的內容摘要，最後一則訊息的內容摘要，最後一則訊息的內容摘要</div>
+                </div>
+              </div>
+
+              <div class="chat-item normal p-1 p-xl-2 p-xxl-3">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="customer-name">王大衛</span>
+                    <span class="customer-sex">先生</span>
+                    <span class="customer-level">普卡會員</span>
+                  </div>
+                  <div class="chat-last-msg-time" title="最後訊息時間">
+                    <span class="ff-oswald">10:05</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="chat-summary">最後一則訊息的內容摘要，最後一則訊息的內容摘要，最後一則訊息的內容摘要</div>
+                </div>
+              </div>
+
+            </div>
+            <div class="tab-pane" id="caseClosed" role="tabpanel" tabindex="0">
+              <div class="chat-item p-1 p-xl-2 p-xxl-3">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="customer-name">G240327-001</span>
+                  </div>
+                  <div class="chat-last-msg-time" title="最後訊息時間">
+                    <span class="ff-oswald">10:05</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="chat-summary">最後一則訊息的內容摘要，最後一則訊息的內容摘要，最後一則訊息的內容摘要</div>
+                </div>
+              </div>
+              <div class="chat-item p-1 p-xl-2 p-xxl-3">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="customer-name">G240327-002</span>
+                  </div>
+                  <div class="chat-last-msg-time" title="最後訊息時間">
+                    <span class="ff-oswald">10:05</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="chat-summary">最後一則訊息的內容摘要，最後一則訊息的內容摘要，最後一則訊息的內容摘要</div>
+                </div>
+              </div>
+              <div class="chat-item p-1 p-xl-2 p-xxl-3">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="customer-name">G240327-003</span>
+                  </div>
+                  <div class="chat-last-msg-time" title="最後訊息時間">
+                    <span class="ff-oswald">10:05</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="chat-summary">最後一則訊息的內容摘要，最後一則訊息的內容摘要，最後一則訊息的內容摘要</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-chat-content py-3">
+    <div class="h-100 border bg-white rounded-4">
+      <div class="d-flex flex-column h-100">
+
+        <div class="chat-content-header diamond">
+          <div>
+            <span class="customer-name">陳約翰</span>
+            <span class="customer-sex">先生</span>
+            <span class="customer-level">鑽石會員</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="chat-duration me-3" title="客服未回應時間">
+              <i class="bi bi-stopwatch"></i>
+              <span class="ff-oswald">00:00:10</span>
+            </div>
+            <button class="btn btn-red" type="button" data-bs-toggle="modal" data-bs-target="#modalSelectCaseType"><i class="bi bi-x me-2"></i>結束對話</button>
+
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-grow-1 position-relative">
+          <div id="chatContentBody" class="chat-content-body p-2 p-xl-3 p-xxl-4">
+            <div class="msg customer-msg">
+              <div class="msg-body">
+                <div class="msg-bubble">顧客留言內容顧客留言內容，顧客留言內容顧客留言內容，顧客留言內容顧客留言內容...</div>
+              </div>
+              <div class="msg-footer">
+                <span class="msg-timestamp">11:22:33</span>
+              </div>
+            </div>
+            <div class="msg agent-msg">
+              <div class="msg-body">
+                <div class="msg-bubble">客服回覆內容，客服回覆內容客服回覆內容，客服回覆內容客服回覆內容...</div>
+              </div>
+              <div class="msg-footer">
+                <span class="msg-timestamp">11:22:33</span>
+                <span class="msg-read">已讀</span>
+                <a href="#" class="msg-unsend">收回</a>
+              </div>
+            </div>
+            <div class="msg customer-msg">
+              <div class="msg-body">
+                <div class="msg-bubble">顧客留言內容顧客留言內容，顧客留言內容顧客留言內容，顧客留言內容顧客留言內容...</div>
+              </div>
+              <div class="msg-footer">
+                <span class="msg-timestamp">11:22:33</span>
+              </div>
+            </div>
+            <div class="msg system-msg">
+              <div class="msg-body">系統訊息</div>
+            </div>
+          </div>
+          <div class="now-typing">
+            <div class="now-typing-who">陳約翰</div>
+          </div>
+        </div>
+
+        
+
+        <div class="chat-content-footer">
+          <div id="emojiWrapper" class="emoji-wrapper fade">
+            <div id="emojiGroup" class="emoji-group p-2 p-xl-3 h-100">
+              <button class="btn" type="button">&#128512;</button>
+              <button class="btn" type="button">&#128514;</button>
+              <button class="btn" type="button">&#128517;</button>
+              <button class="btn" type="button">&#128522;</button>
+              <button class="btn" type="button">&#128525;</button>
+              <button class="btn" type="button">&#128526;</button>
+              <button class="btn" type="button">&#128591;</button>
+              <button class="btn" type="button">&#128075;</button>
+              <button class="btn" type="button">&#128076;</button>
+              <button class="btn" type="button">&#128077;</button>
+              <button class="btn" type="button">&#127873;</button>
+              <button class="btn" type="button">&#128170;</button>
+              <button class="btn" type="button">&#128151;</button>
+              <button class="btn" type="button">&#127774;</button>
+              <button class="btn" type="button">&#127769;</button>
+              <button class="btn" type="button">&#9749;</button>
+              <button class="btn" type="button">&#127882;</button>
+            </div>
+          </div>
+          <div class="input-group p-2 p-xl-3">
+            <div class="btn-group dropup">
+              <button id="toggleMsgTemplate" type="button" class="btn fs-5 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="定型文">
+                <i class="bi bi-card-text"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">定型文1</a></li>
+                <li><a href="#" class="dropdown-item">定型文2</a></li>
+                <li><a href="#" class="dropdown-item">定型文3</a></li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex justify-content-between" data-bs-toggle="dropdown">
+                    <span>定型文分類</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">子項目1</a></li>
+                    <li><a href="#" class="dropdown-item">子項目2</a></li>
+                    <li><a href="#" class="dropdown-item">子項目3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- <button id="toggleMsgTemplate" class="btn fs-5" type="button" title="定型文"><i class="bi bi-card-text"></i></button> -->
+            <button id="toggleEmojiWrapper" class="btn fs-5" type="button" onclick="toggleEmoji()" title="表情符號"><i class="bi bi-emoji-smile"></i></button>
+            <!-- <input id="agentInput" type="text" class="form-control border-0" placeholder="請輸入訊息"> -->
+            <textarea id="agentInput" class="form-control border-0" rows="1" placeholder="請輸入訊息（Enter鍵換行，Ctrl+Enter鍵送出訊息）" onkeyup="textAreaAdjust(this)" style="overflow:hidden"></textarea>
+            <button id="agentSend" class="btn fs-5 " type="button" onclick="handleAgentMsgInput()" title="送出訊息"><i class="bi bi-send"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-customer-profile p-3">
+
+    <div class="h-100 border bg-white rounded-4">
+      <!-- 會員等級class: diamond, platinum, gold, silver, normal -->
+      <div class="diamond d-flex flex-column align-items-center p-2 p-xl-3 p-xxl-4 h-100">
+        <div class="customer-name">陳約翰</div>
+          <div class="customer-gender">先生</div>
+          <div class="customer-id fs-4 ff-oswald" title="顧客編號">123456-654321</div>
+          <div class="customer-level" title="會員等級">鑽石會員</div>
+          <div class="customer-birthday" title="會員生日">
+            <span>民國</span>
+            <span>60</span>
+            <span>年</span>
+            <span>12</span>
+            <span>月</span>
+            <span>12</span>
+            <span>日</span>
+          </div>
+
+        <div class="customer-characteristic">
+          <div class="cc-header"><i class="bi bi-person-lines-fill me-2"></i>客戶特性</div>
+          <div class="cc-body"><span>2023年度VVIP</span><span>2022年度VIP</span><span>限專人服務</span><span>限本人親收</span><span>客戶要紙本發票</span></div>
+        </div>
+
+        <div class="customer-chat-history">
+          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalChatHistory">顯示歷史對話紀錄</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toggle-profile">
+      <button class="btn" type="button" onclick="toggleProfile()">
+        <i class="bi bi-chevron-compact-right"></i>
+        <i class="bi bi-chevron-compact-left"></i>
+      </button>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalSelectCaseType" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header" data-bs-theme="dark">
+        <h1 class="modal-title fs-5 fw-bold text-white">請選擇案件類型(Call Type)</h1>
+        <button type="button" class="btn" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body p-5">
+        <div class="row row-cols-5 d-flex flex-wrap g-5">
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">客訴服務</div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-1-1">
+              <label class="form-check-label" for="caseTypeRadio-1-1">客訴接線員服務</label>
+            </div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-1-2">
+              <label class="form-check-label" for="caseTypeRadio-1-2">客訴送貨司機服務</label>
+            </div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-1-3">
+              <label class="form-check-label" for="caseTypeRadio-1-3">供應商服務客訴</label>
+            </div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-1-4">
+              <label class="form-check-label" for="caseTypeRadio-1-4">客訴節目</label>
+            </div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-1-5">
+              <label class="form-check-label" for="caseTypeRadio-1-5">客訴其他部門處理作業</label>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">訂單內容變更</div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-2-1">
+              <label class="form-check-label" for="caseTypeRadio-2-1">變更付款方式</label>
+            </div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-2-2">
+              <label class="form-check-label" for="caseTypeRadio-2-2">變更出/到貨日</label>
+            </div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-2-3">
+              <label class="form-check-label" for="caseTypeRadio-2-3">變更送貨地址</label>
+            </div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-2-4">
+              <label class="form-check-label" for="caseTypeRadio-2-4">變更訂購組數</label>
+            </div>
+            <div class="form-check form-check-inline g-col-4">
+              <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-2-5">
+              <label class="form-check-label" for="caseTypeRadio-2-5">商品規格變更</label>
+            </div>
+          </div>   
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">A/S申請</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-3-1">
+                <label class="form-check-label" for="caseTypeRadio-3-1">線上諮詢</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-3-2">
+                <label class="form-check-label" for="caseTypeRadio-3-2">廠商處理</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">取消訂單</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-4-1">
+                <label class="form-check-label" for="caseTypeRadio-4-1">取消退、換貨</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">配送/查詢</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-5-1">
+                <label class="form-check-label" for="caseTypeRadio-5-1">送貨日諮詢(公司配送)</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-5-2">
+                <label class="form-check-label" for="caseTypeRadio-5-2">送貨日諮詢(廠商配送)</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">商品諮詢</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-6-1">
+                <label class="form-check-label" for="caseTypeRadio-6-1">使用方法</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-6-2">
+                <label class="form-check-label" for="caseTypeRadio-6-2">包裝說明</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">換貨申請</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-7-1">
+                <label class="form-check-label" for="caseTypeRadio-7-1">詢問換貨流程</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">退貨申請</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-8-1">
+                <label class="form-check-label" for="caseTypeRadio-8-1">退貨催收</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-8-2">
+                <label class="form-check-label" for="caseTypeRadio-8-2">退貨確認</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-8-3">
+                <label class="form-check-label" for="caseTypeRadio-8-3">詢問退貨流程</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">帳款查詢</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-9-1">
+                <label class="form-check-label" for="caseTypeRadio-9-1">發票相關事宜</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-9-2">
+                <label class="form-check-label" for="caseTypeRadio-9-2">貨款確認</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-9-3">
+                <label class="form-check-label" for="caseTypeRadio-9-3">退款確認</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">活動諮詢</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-10-1">
+                <label class="form-check-label" for="caseTypeRadio-10-1">中獎名單</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-10-2">
+                <label class="form-check-label" for="caseTypeRadio-10-2">近期活動</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">購物金</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-11-1">
+                <label class="form-check-label" for="caseTypeRadio-11-1">購物金查詢</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">其他</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-12-1">
+                <label class="form-check-label" for="caseTypeRadio-12-1">斷線</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-12-2">
+                <label class="form-check-label" for="caseTypeRadio-12-2">轉接電話</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">訂購/訂單</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-13-1">
+                <label class="form-check-label" for="caseTypeRadio-13-1">訂購商品</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-13-2">
+                <label class="form-check-label" for="caseTypeRadio-13-2">訂購流程詢問</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">網路會員</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-14-1">
+                <label class="form-check-label" for="caseTypeRadio-14-1">網路會員問題</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-14-2">
+                <label class="form-check-label" for="caseTypeRadio-14-2">網路訂購問題</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-14-3">
+                <label class="form-check-label" for="caseTypeRadio-14-3">網路問題反應</label>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <div class="fs-5 fw-bold clr-primary-blue pb-2 border-bottom">客戶意見反應</div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-15-1">
+                <label class="form-check-label" for="caseTypeRadio-15-1">節目呈現問題</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-15-2">
+                <label class="form-check-label" for="caseTypeRadio-15-2">商品相關建議</label>
+              </div>
+              <div class="form-check form-check-inline g-col-4">
+                <input class="form-check-input" type="radio" name="caseTypeRadio" id="caseTypeRadio-15-3">
+                <label class="form-check-label" for="caseTypeRadio-15-3">作業流程上的建議</label>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+          
+      </div>
+      
+      <div class="modal-footer border-top-0">
+        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">確定結束對話</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalChatHistory" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" data-bs-theme="dark">
+        <h1 class="modal-title fs-5 fw-bold text-white">歷史對話紀錄</h1>
+        <button type="button" class="btn" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-grid gap-3 p-4">
+          <div class="d-flex justify-content-between">
+            <div><a href="#modalChatLog" data-bs-toggle="modal">2024/01/01 12:25:03</a></div>
+            <div>甄美好</div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div><a href="#modalChatLog" data-bs-toggle="modal">2024/01/02 10:11:36</a></div>
+            <div>甄美好</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalChatLog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" data-bs-theme="dark">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalChatHistory"><i class="bi bi-chevron-left"></i></button>
+        <h1 class="modal-title fs-5 fw-bold text-white">對話紀錄內容</h1>
+        <button type="button" class="btn" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="d-flex flex-wrap justify-content-between p-2 p-xl-3 p-xxl-4 border-bottom bg-white sticky-top">
+          <div class="d-flex flex-column gap-2">
+            <div class="d-flex">
+              <span class="badge text-bg-secondary me-2">總對話時間</span>
+              <span>00:10:36</span>  
+            </div>
+          </div>
+          <div class="d-flex flex-column gap-2">
+            <div class="d-flex">
+              <span class="badge text-bg-secondary me-2">顧客名稱</span>
+              <span>陳約翰</span>
+            </div>
+            <div class="d-flex">
+              <span class="badge text-bg-secondary me-2">顧客編號</span>
+              <span class="ff-oswald">123456-654321</span>
+            </div>
+          </div>
+          <div class="d-flex flex-column gap-2">
+            <div class="d-flex">
+              <span class="badge text-bg-secondary me-2">客服名稱</span>
+              <span>甄美好</span>
+            </div>
+            <div class="d-flex">
+              <span class="badge text-bg-secondary me-2">客服當時暱稱</span>
+              <span>南港張曼玉</span>
+            </div>
+          </div>
+          
+          
+        </div>
+        <div class="d-flex flex-column p-2 p-xl-3 p-xxl-4">
+          
+          <div class="msg customer-msg">
+            <div class="msg-body">
+              <div class="msg-bubble">顧客留言內容顧客留言內容，顧客留言內容顧客留言內容，顧客留言內容顧客留言內容...</div>
+            </div>
+            <div class="msg-footer">
+              <span class="msg-timestamp">11:22:33</span>
+            </div>
+          </div>
+
+          <div class="msg agent-msg">
+            <div class="msg-body">
+              <div class="msg-bubble">客服回覆內容，客服回覆內容客服回覆內容，客服回覆內容客服回覆內容...</div>
+            </div>
+            <div class="msg-footer">
+              <span class="msg-timestamp">11:22:33</span>
+            </div>
+          </div>
+
+          <div class="msg customer-msg">
+            <div class="msg-body">
+              <div class="msg-bubble">顧客留言內容顧客留言內容，顧客留言內容顧客留言內容，顧客留言內容顧客留言內容...</div>
+            </div>
+            <div class="msg-footer">
+              <span class="msg-timestamp">11:22:33</span>
+            </div>
+          </div>
+
+          <div class="msg system-msg">
+            <div class="msg-body">系統訊息</div>
+          </div>
+
+          <div class="msg customer-msg">
+            <div class="msg-body">
+              <div class="msg-bubble">顧客留言內容顧客留言內容，顧客留言內容顧客留言內容，顧客留言內容顧客留言內容...</div>
+            </div>
+            <div class="msg-footer">
+              <span class="msg-timestamp">11:22:33</span>
+            </div>
+          </div>
+
+          <div class="msg agent-msg">
+            <div class="msg-body">
+              <div class="msg-bubble">客服回覆內容，客服回覆內容客服回覆內容，客服回覆內容客服回覆內容...</div>
+            </div>
+            <div class="msg-footer">
+              <span class="msg-timestamp">11:22:33</span>
+            </div>
+          </div>
+
+          <div class="msg customer-msg">
+            <div class="msg-body">
+              <div class="msg-bubble">顧客留言內容顧客留言內容，顧客留言內容顧客留言內容，顧客留言內容顧客留言內容...</div>
+            </div>
+            <div class="msg-footer">
+              <span class="msg-timestamp">11:22:33</span>
+            </div>
+          </div>
+
+          <div class="msg customer-msg">
+            <div class="msg-body">
+              <div class="msg-bubble">顧客留言內容顧客留言內容，顧客留言內容顧客留言內容，顧客留言內容顧客留言內容...</div>
+            </div>
+            <div class="msg-footer">
+              <span class="msg-timestamp">11:22:33</span>
+            </div>
+          </div>
+
+          <div class="msg agent-msg">
+            <div class="msg-body">
+              <div class="msg-bubble">客服回覆內容，客服回覆內容客服回覆內容，客服回覆內容客服回覆內容...</div>
+            </div>
+            <div class="msg-footer">
+              <span class="msg-timestamp">11:22:33</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">返回</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<!-- JS -->
+<script src="common/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-2.0.6/b-3.0.2/b-html5-3.0.2/date-1.5.2/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/zh-tw.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/2.0.7/sorting/datetime-moment.js"></script>
+<script src="common/js/main.js"></script>
+</body>
+</html>

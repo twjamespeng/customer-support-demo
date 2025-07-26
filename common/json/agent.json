@@ -1,0 +1,37 @@
+{
+    "data": [
+        {
+            "a_id": "111001",
+            "a_name": "陳大明",
+            "dept": "客戶服務部",
+            "section": "客戶服務課",
+            "team": "售服一組",
+            "capacity": "5",
+            "status": "啟用",
+            "permission": "客服人員",
+            "control": "編輯"
+        },
+        {
+            "a_id": "111002",
+            "a_name": "陳聰明",
+            "dept": "客戶服務部",
+            "section": "客戶服務課",
+            "team": "售服二組",
+            "capacity": "6",
+            "status": "停用",
+            "permission": "客服人員",
+            "control": "編輯"
+        },
+        {
+            "a_id": "111003",
+            "a_name": "陳小明",
+            "dept": "客戶服務部",
+            "section": "客戶服務課",
+            "team": "售服三組",
+            "capacity": "7",
+            "status": "密碼待修改",
+            "permission": "客服人員",
+            "control": "編輯"
+        }
+    ]
+}
